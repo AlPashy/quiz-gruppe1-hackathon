@@ -10,7 +10,7 @@ var questions = [
         correctAnswerIndex: 2
     },
     {
-        question: "Was ist der größte Standort der Atruvia AGs",
+        question: "Wo liegt der größte Standort der Atruvia AGs",
         options: ["München", "Karlsruhe", "Münster"],
         correctAnswerIndex: 1 
     },
@@ -25,7 +25,7 @@ var questions = [
         correctAnswerIndex: 2  
     },
     {
-        question: "Welche Arten von Dienstleistungen oder Produkte biete die Atruvia AG an?",
+        question: "Welche Arten von Dienstleistungen oder Produkte bietet die Atruvia AG an?",
         options: ["Automobile", "Medizinische Geräte", "Softwarelösungen für Compliance und Datenschutz"],
         correctAnswerIndex: 2
     },
@@ -35,7 +35,7 @@ var questions = [
         correctAnswerIndex: 1
     },
     {
-        question: "Welche bekannten Kunden oder Partner hat die Atruvia AG?",
+        question: "Welche Kunden oder Partner arbeiten mit der Atruvia AG?",
         options: ["Tesla", "Microsoft", "Volksbanken", "Alle der oben genannten"],
         correctAnswerIndex: 2
     }
