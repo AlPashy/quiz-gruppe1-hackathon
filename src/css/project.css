@@ -96,7 +96,7 @@ input:checked + label {
 
 .button-style:hover {
     border-color: #000000;
-    background: aliceblue;
+    background: lightgrey;
 }
 .btn {
     cursor: pointer;

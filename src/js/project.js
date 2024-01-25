@@ -5,39 +5,39 @@ var questions = [
         correctAnswerIndex: 1
     },
     {
-        question: "Wie viel Mitarbeiter hat die Atruvia?",
+        question: "Wie viele Mitarbeiter sind bei der Atruvia beschäftigt?",
         options: ["2500", "4100", "5100", "6000"],
         correctAnswerIndex: 2
     },
     {
-        question: "Wo liegt der größte Standort der Atruvia AGs",
+        question: "Wo liegt der größte Standort der Atruvia AG",
         options: ["München", "Karlsruhe", "Münster"],
         correctAnswerIndex: 1 
     },
     {
-        question: "Wie viele Azubis gibt es insgesamt an allen Standorten?",
-        options: ["50", "100", "200", "300"],
-        correctAnswerIndex: 2
+        question: "Wie viele Azubis gibt es insgesamt an allen Standorten? (Stand: 01.09.2023)",
+        options: ["149", "152", "161", "157"],
+        correctAnswerIndex: 3
     },
     {   
-        question: "Wann war die Fusion zwischen der Fiducia & GAD?",
-        options: ["2005", "2010", "2015"],
-        correctAnswerIndex: 2  
+        question: "Wann war der Zusammenschluss zwischen der Fiducia & GAD?",
+        options: ["2015", "2005", "2010"],
+        correctAnswerIndex: 0
     },
     {
         question: "Welche Arten von Dienstleistungen oder Produkte bietet die Atruvia AG an?",
-        options: ["Automobile", "Medizinische Geräte", "Softwarelösungen für Compliance und Datenschutz"],
-        correctAnswerIndex: 2
-    },
-    {
-        question: "Warum ist die Atruvia AG einer der größten Kunden der Deutschen Post?",
-        options: ["Hohe Nachfrage nach Briefmarken", "Nutzung von Postdienstleistungen für den Versand von Unterlagen", "Exklusiver Vertrag für Paketlieferungen"],
+        options: ["Automobile", "Banken-IT-Lösungen", "Medizinische Geräte"],
         correctAnswerIndex: 1
     },
     {
-        question: "Welche Kunden oder Partner arbeiten mit der Atruvia AG?",
-        options: ["Tesla", "Microsoft", "Volksbanken", "Alle der oben genannten"],
+        question: "Wie viele Banken betreut insgesamt die Atruvia AG?",
+        options: ["ca. 884 Banken ", "ca. 617 Banken", "ca. 1035 Banken"],
         correctAnswerIndex: 2
+    },
+    {
+        question: "Welche Kunden oder Partner arbeiten mit der Atruvia AG?",
+        options: ["IBM", "Microsoft", "Volksbanken", "Alle der oben genannten"],
+        correctAnswerIndex: 3
     }
 ];
 
