@@ -10,7 +10,7 @@ var questions = [
         correctAnswerIndex: 2
     },
     {
-        question: "Wo liegt der größte Standort der Atruvia AG",
+        question: "Wo liegt der größte Standort der Atruvia AG?",
         options: ["München", "Karlsruhe", "Münster"],
         correctAnswerIndex: 1 
     },
@@ -115,7 +115,7 @@ function run() {
             if (won) {
             message.textContent = 'You win! 👑';
             } else {
-            message.textContent = 'You lose! 👑';
+            message.textContent = 'You lose! 🥈';
             }
 
         }
