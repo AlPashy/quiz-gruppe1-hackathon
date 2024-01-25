@@ -45,10 +45,88 @@ var currentQuestionIndex = 0;
 var correctAnswersFr = 0;
 var timer;
 
+
+async function register() {
+    var url = "http://192.168.10.139:8080/register"
+    console.log(url)
+    const response = await fetch(url, {
+        method: "GET" // *GET, POST, PUT, DELETE, etc.
+      });
+     var json = await response.json(); // parses JSON response into native JavaScript objects
+
+     return json.uuid;
+}
+
+async function result(uuid, score) {
+    var url = "http://192.168.10.139:8080/result?uuid=" + uuid + "&score=" + score
+    console.log(url)
+    await fetch(url, {
+        method: "GET" // *GET, POST, PUT, DELETE, etc.
+      });
+
+}
+
+async function statusCall(uuid) {
+    var url = "http://192.168.10.139:8080/status?uuid=" + uuid
+    console.log(url)
+    const response = await fetch(url, {
+        method: "GET" // *GET, POST, PUT, DELETE, etc.
+      });
+     var json = await response.json(); // parses JSON response into native JavaScript objects
+
+     return json;
+}
+
+async function test() {
+    var uuid1 = await register();
+    var uuid2 = await register();
+
+    await result(uuid1, 1)
+    await result(uuid2, 5)
+
+    var end1 = await statusCall(uuid1)
+    var end2 = await statusCall(uuid2)
+
+    console.log(end1.won, end1.opponentScore)
+    console.log(end2.won, end2.opponentScore)
+}
+
+
+
+var uuid;
+
+register().then(uuid1 => {
+    uuid = uuid1
+})
+
 document.addEventListener('DOMContentLoaded', function () {
     updateQuestion();
     startTimer();
 });
+
+function run() {
+    statusCall(uuid).then(result => {
+        if (result.opponentScore !== -1) {
+            console.log("finished")
+           
+            // Win / Lose screen
+            var won = result.won
+            var message = document.getElementById("result");
+            if (won) {
+            message.textContent = 'You win! 👑';
+            } else {
+            message.textContent = 'You lose! 👑';
+            }
+
+        }
+        console.log(result)
+    })
+    console.log("Check")
+    window.setTimeout(run, 1000)
+}
+
+//window.setTimeout(run(), 1000)
+run()
 
 function startTimer() {
     var timerDisplay = document.getElementById('timer');
@@ -157,12 +235,16 @@ function displayScore() {
     questionContainer.appendChild(scoreHeading);
     var message = document.createElement('p');
     message.style.fontSize = '25px';
+    message.id = "result";
+    message.textContent = "Warte auf Gegner..."
 
-    if (score === questions.length) {
+    result(uuid, score)
+
+    /*if (score === questions.length) {
         message.textContent = 'You win! 👑';
     } else {
         message.textContent = 'You lose! 😂';
-    }
+    }*/
 
     questionContainer.appendChild(message);
 
@@ -198,3 +280,7 @@ function resetTimer() {
     clearTimeout(timer);
     startTimer();
 }
+
+
+
+
